@@ -6,6 +6,7 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			books: [
+        {title: "Show Jumping", author: 'Major BottomSaw', contributor: 'Anonymous'},
 				{ title: 'Just Kidding', author: 'Paul Duvverwon and Scott Belzon', contributor: 'Dave Collison' },
 				{ title: 'A Quick Drink', author: 'Jean Antonique', contributor: 'Dave Collison' },
 				{ title: 'Scattered Showers', author: 'Peter Patter and Em Burella', contributor: 'Dave Collison' },
@@ -134,32 +135,33 @@ class App extends React.Component {
 		const previousIndex = this.state.index - 1;
 		this.setState({
 			index: previousIndex
-		});
-		this.checkButtons(previousIndex);
+    });
+    this.checkButtons(previousIndex);
+    return previousIndex;
 	};
 
 	nextIndex = () => {
 		const nextIndex = this.state.index + 1;
 		this.setState({
 			index: nextIndex
-		});
-		this.checkButtons(nextIndex);
+    });
+    this.checkButtons(nextIndex);
+		return nextIndex;
 	};
 
 	randomIndex = () => {
 		const randomIndex = Math.floor(Math.random() * this.state.books.length);
 		this.setState({
 			index: randomIndex
-		});
-		this.checkButtons(randomIndex);
+    });
+    this.checkButtons(randomIndex);
+    return randomIndex;
 	};
 
 	checkButtons = (index) => {
 		const lastIndex = this.state.books.length - 1;
 		const prevButton = document.getElementById('previousIndex');
 		const nextButton = document.getElementById('nextIndex');
-
-		console.log(lastIndex, prevButton, nextButton);
 
 		if (index === 0) {
 			prevButton.setAttribute('disabled', '');
@@ -175,8 +177,7 @@ class App extends React.Component {
 	};
 
 	componentDidMount() {
-		this.randomIndex();
-		this.checkButtons(this.state.index);
+		this.checkButtons(this.randomIndex());
 	}
 
 	render() {
@@ -187,7 +188,7 @@ class App extends React.Component {
 						<i className="fa fa-bookmark" aria-hidden="true" /> Fictional Books Library V0.1
 					</h1>
 					<div className="book-details">
-						<p className="book-number">{this.state.index}</p>
+						<p className="book-number">{this.state.index + 1}</p>
 						<div className="book-title">{this.state.books[this.state.index].title}</div>
 						<cite>{this.state.books[this.state.index].author}</cite>
 					</div>
