@@ -1,6 +1,18 @@
+:root {
+    --main-clr-h: 225deg;
+    --background-clr-dark: hsl(var(--main-clr-h), 15%, 10%);
+    --background-clr: hsl(var(--main-clr-h), 15%, 18%);
+    --background-clr-light: hsl(var(--main-clr-h), 15%, 32%);
+    --accent-clr-dark: hsl(var(--main-clr-h),100%,20%);
+    --accent-clr: hsl(var(--main-clr-h), 100%, 50%);
+    --accent-clr-light: hsl(var(--main-clr-h), 100%, 60%);
+}
+
+
 .App {
     text-align: center;
-    background-color: #282c34;
+    background-color: var(--background-clr-dark);
+    /* background-color: #282c34; */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -8,6 +20,10 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+.lightmode {
+    filter: invert(1) hue-rotate(180deg);
 }
 
 .book-title {
@@ -25,7 +41,7 @@
 
 .fa,
 .fas {
-    opacity: .5;
+    color: var(--accent-clr-light);
 }
 
 .book-number {
@@ -56,7 +72,7 @@ cite::before {
 
 button {
     color: white;
-    background: #4448;
+    background-color: var(--background-clr);
     padding: .5em 1.5em;
     border: none;
     outline: none;
@@ -64,18 +80,19 @@ button {
     transition: background-color 250ms ease-out;
 }
 
-button:first-of-type {
+.button-panel button:first-of-type {
     border-radius: 2em 0 0 2em;
     padding-left: 1.7em;
 }
 
-button:last-of-type {
+.button-panel button:last-of-type {
     border-radius: 0 2em 2em 0;
     padding-right: 1.7em;
 }
 
+
 button:hover {
-    background-color: grey;
+    background-color: var(--background-clr-light);
 }
 
 button:focus,
@@ -84,9 +101,16 @@ button:active {
 }
 
 button[disabled] {
-    background-color: #282c34;
-    color: #999;
+    background-color: var(--background-clr-dark);
+    color: #9998;
     box-shadow: none;
+}
+
+.button-round {
+    color: hsl(calc( var(--main-clr-h) + 180deg ), 100%, 50%);
+    border-radius: 2em;
+    margin: 1em;
+    padding: .6rem;
 }
 
 .book-details {

@@ -123,15 +123,16 @@ class App extends React.Component {
 				{ title: 'Where are you?', author: 'Colin Yoname', contributor: 'Damien' }
 			],
 			index: 0,
-			prevButton: '',
-			nextButton: ''
+			lightmode: false
 		};
+
 		this.firstIndex = this.firstIndex.bind(this);
 		this.previousIndex = this.previousIndex.bind(this);
 		this.nextIndex = this.nextIndex.bind(this);
 		this.lastIndex = this.lastIndex.bind(this);
 		this.randomIndex = this.randomIndex.bind(this);
 		this.checkButtons = this.checkButtons.bind(this);
+		this.toggleDarkMode = this.toggleDarkMode.bind(this);
 	}
 
 	firstIndex = () => {
@@ -209,8 +210,19 @@ class App extends React.Component {
 		}
 	};
 
+	toggleDarkMode = () => {
+		const newLightMode = !this.state.lightmode;
+		this.setState({
+			lightmode: newLightMode
+		})
+		document.querySelector('.App').classList.toggle('lightmode');
+	}
+
 	componentDidMount() {
 		this.checkButtons(this.randomIndex());
+		if (this.state.lightmode) {
+			document.querySelector('.App').classList.add('lightmode');
+		}
 	}
 
 	render() {
@@ -248,6 +260,7 @@ class App extends React.Component {
 						</button>
 					</div>
 				</div>
+				<button onClick={this.toggleDarkMode} className="button-round"><i class="far fa-lightbulb"></i></button>
 			</div>
 		);
 	}
