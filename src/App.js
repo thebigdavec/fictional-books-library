@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
       <header className="App-header">
 <div>
   <h1>
-    Fictional Books Library
+  <i class="fa fa-bookmark" aria-hidden="true"></i> Fictional Books Library
   </h1>
 </div>
       </header>
