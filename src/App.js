@@ -7,7 +7,7 @@ class App extends React.Component {
 		this.state = {
 			books: [
 				{ title: 'Falling Off Of A Cliff', author: 'Eileen Dover', contributor: 'Anonymous' },
-				{ title: 'Show Jumping', author: 'Major BottomSaw', contributor: 'Anonymous' },
+				{ title: 'Showjumping', author: 'Major BottomSaw', contributor: 'Anonymous' },
 				{ title: 'Just Kidding', author: 'Paul Duvverwon and Scott Belzon', contributor: 'Dave Collison' },
 				{ title: 'A Quick Drink', author: 'Jean Antonique', contributor: 'Dave Collison' },
 				{ title: 'Scattered Showers', author: 'Peter Patter and Em Burella', contributor: 'Dave Collison' },
@@ -191,7 +191,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<div>
+				<div className="wrapper">
 					<h1>
 						<i className="fa fa-bookmark" aria-hidden="true" /> Fictional Books Library V0.1
 					</h1>
