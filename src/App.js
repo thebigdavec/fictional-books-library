@@ -197,7 +197,7 @@ class App extends React.Component {
 					</h1>
 					<div className="book-details">
           <div className="book-id">
-          <i className="fas fa-book book-title-icon fa-2x"></i>
+		  <i className="fas fa-book-open fa-2x"></i>
           <p className="book-number">{this.state.index + 1}</p></div>
           <div className="title-and-author">
 
