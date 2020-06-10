@@ -42,7 +42,7 @@ cite {
 }
 
 cite::before {
-    content: '– ';
+    content: '– by ';
 }
 
 .button-panel {
