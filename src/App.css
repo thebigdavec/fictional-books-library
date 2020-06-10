@@ -47,9 +47,11 @@ cite::before {
 
 .button-panel {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 80%;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 90%;
     margin: 0 auto;
+    font-size: .8rem;
+    text-transform: uppercase;
 }
 
 button {
@@ -59,8 +61,7 @@ button {
     border: none;
     outline: none;
     margin: 1px;
-    font-size: 1rem;
-    transition: background 250ms ease-out;
+    transition: background-color 250ms ease-out;
 }
 
 button:first-of-type {
@@ -74,7 +75,7 @@ button:last-of-type {
 }
 
 button:hover {
-    background: grey;
+    background-color: grey;
 }
 
 button:focus,
@@ -83,7 +84,7 @@ button:active {
 }
 
 button[disabled] {
-    background: #282c34;
+    background-color: #282c34;
     color: #999;
     box-shadow: none;
 }

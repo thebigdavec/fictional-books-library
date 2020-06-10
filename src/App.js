@@ -126,11 +126,21 @@ class App extends React.Component {
 			prevButton: '',
 			nextButton: ''
 		};
+		this.firstIndex = this.firstIndex.bind(this);
 		this.previousIndex = this.previousIndex.bind(this);
 		this.nextIndex = this.nextIndex.bind(this);
+		this.lastIndex = this.lastIndex.bind(this);
 		this.randomIndex = this.randomIndex.bind(this);
 		this.checkButtons = this.checkButtons.bind(this);
 	}
+
+	firstIndex = () => {
+		this.setState({
+			index: 0
+		});
+		this.checkButtons(0);
+		return 0;
+	};
 
 	previousIndex = () => {
 		const previousIndex = this.state.index - 1;
@@ -148,6 +158,15 @@ class App extends React.Component {
 		});
 		this.checkButtons(nextIndex);
 		return nextIndex;
+	};
+
+	lastIndex = () => {
+		const lastIndex = this.state.books.length - 1;
+		this.setState({
+			index: lastIndex
+		});
+		this.checkButtons(lastIndex);
+		return lastIndex;
 	};
 
 	randomIndex = () => {
@@ -170,16 +189,22 @@ class App extends React.Component {
 		const lastIndex = this.state.books.length - 1;
 		const prevButton = document.getElementById('previousIndex');
 		const nextButton = document.getElementById('nextIndex');
+		const firstButton = document.getElementById('firstIndex');
+		const lastButton = document.getElementById('lastIndex');
 
 		if (index === 0) {
+			firstButton.setAttribute('disabled', '');
 			prevButton.setAttribute('disabled', '');
 		} else {
+			firstButton.removeAttribute('disabled', '');
 			prevButton.removeAttribute('disabled', '');
 		}
 
 		if (index === lastIndex) {
+			lastButton.setAttribute('disabled', '');
 			nextButton.setAttribute('disabled', '');
 		} else {
+			lastButton.removeAttribute('disabled', '');
 			nextButton.removeAttribute('disabled', '');
 		}
 	};
@@ -206,14 +231,20 @@ class App extends React.Component {
 					</div>
           </div>
 					<div className="button-panel">
+						<button id="firstIndex" onClick={this.firstIndex}>
+						<i class="fas fa-angle-double-left"></i> First
+						</button>
 						<button id="previousIndex" onClick={this.previousIndex}>
-							Previous
+						<i class="fas fa-angle-left"></i> Previous
 						</button>
 						<button id="randomIndex" onClick={this.randomIndex}>
-							Random Book
+						<i class="fas fa-random"></i> Random
 						</button>
 						<button id="nextIndex" onClick={this.nextIndex}>
-							Next
+						<i class="fas fa-angle-right"></i> Next
+						</button>
+						<button id="lastIndex" onClick={this.lastIndex}>
+						<i class="fas fa-angle-double-right"></i> Last
 						</button>
 					</div>
 				</div>
