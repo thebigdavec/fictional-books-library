@@ -8,7 +8,6 @@
     --accent-clr-light: hsl(var(--main-clr-h), 100%, 60%);
 }
 
-
 .App {
     text-align: center;
     background-color: var(--background-clr-dark);

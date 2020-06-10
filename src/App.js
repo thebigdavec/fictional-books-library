@@ -230,7 +230,7 @@ class App extends React.Component {
 			<div className="App">
 				<div className="wrapper">
 					<h1>
-						<i className="fa fa-bookmark" aria-hidden="true" /> Fictional Books Library V0.1
+						<i className="fa fa-bookmark" aria-hidden="true" /> Fictional Books Library
 					</h1>
 					<div className="book-details">
           <div className="book-id">
