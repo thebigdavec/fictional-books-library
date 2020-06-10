@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
 <div>
   <h1>
-  <i class="fa fa-bookmark" aria-hidden="true"></i> Fictional Books Library
+  <i class="fa fa-bookmark" aria-hidden="true"></i> Fictional Books Library V0.1
   </h1>
 </div>
       </header>
