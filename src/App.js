@@ -53,7 +53,7 @@ class App extends React.Component {
 				{ title: 'Petty Crimes', author: 'Miss Chief and Mister Meanor', contributor: 'Dave Collison' },
 				{ title: 'Stop! Police!', author: 'Nina Neenaw', contributor: 'Dave Collison' },
 				{ title: 'That Sinking Feeling', author: 'Mandy Lifeboats', contributor: 'Dave Collison' },
-				{ title: 'Repect For Your Elders', author: 'Keiran D. Community', contributor: 'Dave Collison' },
+				{ title: 'Respect For Your Elders', author: 'Keiran D. Community', contributor: 'Dave Collison' },
 				{ title: 'My Empathy', author: 'Ophelia Payne', contributor: 'Dave Collison' },
 				{ title: 'Procrastinate', author: 'Tom Morrow', contributor: 'Dave Collison' },
 				{ title: 'Under The Microscope', author: 'Molly Cule', contributor: 'Dave Collison' },
