@@ -6,7 +6,8 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			books: [
-        {title: "Show Jumping", author: 'Major BottomSaw', contributor: 'Anonymous'},
+				{ title: 'Falling Off Of A Cliff', author: 'Eileen Dover', contributor: 'Anonymous' },
+				{ title: 'Show Jumping', author: 'Major BottomSaw', contributor: 'Anonymous' },
 				{ title: 'Just Kidding', author: 'Paul Duvverwon and Scott Belzon', contributor: 'Dave Collison' },
 				{ title: 'A Quick Drink', author: 'Jean Antonique', contributor: 'Dave Collison' },
 				{ title: 'Scattered Showers', author: 'Peter Patter and Em Burella', contributor: 'Dave Collison' },
@@ -135,27 +136,34 @@ class App extends React.Component {
 		const previousIndex = this.state.index - 1;
 		this.setState({
 			index: previousIndex
-    });
-    this.checkButtons(previousIndex);
-    return previousIndex;
+		});
+		this.checkButtons(previousIndex);
+		return previousIndex;
 	};
 
 	nextIndex = () => {
 		const nextIndex = this.state.index + 1;
 		this.setState({
 			index: nextIndex
-    });
-    this.checkButtons(nextIndex);
+		});
+		this.checkButtons(nextIndex);
 		return nextIndex;
 	};
 
 	randomIndex = () => {
-		const randomIndex = Math.floor(Math.random() * this.state.books.length);
-		this.setState({
-			index: randomIndex
-    });
-    this.checkButtons(randomIndex);
-    return randomIndex;
+      const currentIndex = this.state.index;
+      var randomIndex = currentIndex;
+
+      do {
+        randomIndex = Math.floor(Math.random() * this.state.books.length)
+      } while ((currentIndex === randomIndex) && (this.state.books.length > 1));
+
+			this.setState({
+				index: randomIndex
+			});
+		
+		this.checkButtons(randomIndex);
+		return randomIndex;
 	};
 
 	checkButtons = (index) => {
@@ -188,10 +196,15 @@ class App extends React.Component {
 						<i className="fa fa-bookmark" aria-hidden="true" /> Fictional Books Library V0.1
 					</h1>
 					<div className="book-details">
-						<p className="book-number">{this.state.index + 1}</p>
-						<div className="book-title">{this.state.books[this.state.index].title}</div>
+          <div className="book-id">
+          <i className="fas fa-book book-title-icon fa-2x"></i>
+          <p className="book-number">{this.state.index + 1}</p></div>
+          <div className="title-and-author">
+
+						<div><span className="book-title">{this.state.books[this.state.index].title}</span></div>
 						<cite>{this.state.books[this.state.index].author}</cite>
 					</div>
+          </div>
 					<div className="button-panel">
 						<button id="previousIndex" onClick={this.previousIndex}>
 							Previous
