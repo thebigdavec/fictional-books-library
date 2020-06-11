@@ -233,12 +233,14 @@ class App extends React.Component {
 			lightmode: newLightMode
 		})
 		document.querySelector('.App').classList.toggle('lightmode');
+		document.querySelector('.wrapper').classList.toggle('invert');
 	}
 
 	componentDidMount() {
 		this.checkButtons(this.randomIndex());
 		if (this.state.lightmode) {
 			document.querySelector('.App').classList.add('lightmode');
+			document.querySelector('.wrapper').classList.add('invert');
 		}
 	}
 

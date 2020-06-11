@@ -133,3 +133,7 @@ button[disabled] {
     box-shadow: -3px -3px 15px #ccc2, -5px -5px 30px #ccc2, 3px 3px 15px #000a, 5px 5px 30px #000a;
     border-radius: 50px;
 }
+
+.invert {
+    box-shadow: 3px 3px 15px #ccc2, 5px 5px 30px #ccc2, -3px -3px 15px #000a, -5px -5px 30px #000a;
+}
