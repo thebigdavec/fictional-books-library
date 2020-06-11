@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fictional-books-library/static/css/main.0d9d71cf.chunk.css",
+    "main.js": "/fictional-books-library/static/js/main.af18132e.chunk.js",
+    "main.js.map": "/fictional-books-library/static/js/main.af18132e.chunk.js.map",
+    "runtime-main.js": "/fictional-books-library/static/js/runtime-main.bcff7d62.js",
+    "runtime-main.js.map": "/fictional-books-library/static/js/runtime-main.bcff7d62.js.map",
+    "static/js/2.3a9cb790.chunk.js": "/fictional-books-library/static/js/2.3a9cb790.chunk.js",
+    "static/js/2.3a9cb790.chunk.js.map": "/fictional-books-library/static/js/2.3a9cb790.chunk.js.map",
+    "index.html": "/fictional-books-library/index.html",
+    "precache-manifest.6ed944ccb801a1c3a943075ce50bb9aa.js": "/fictional-books-library/precache-manifest.6ed944ccb801a1c3a943075ce50bb9aa.js",
+    "service-worker.js": "/fictional-books-library/service-worker.js",
+    "static/css/main.0d9d71cf.chunk.css.map": "/fictional-books-library/static/css/main.0d9d71cf.chunk.css.map",
+    "static/js/2.3a9cb790.chunk.js.LICENSE.txt": "/fictional-books-library/static/js/2.3a9cb790.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bcff7d62.js",
+    "static/js/2.3a9cb790.chunk.js",
+    "static/css/main.0d9d71cf.chunk.css",
+    "static/js/main.af18132e.chunk.js"
+  ]
+}
